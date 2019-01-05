@@ -1,14 +1,22 @@
-<!doctype html>
-<script>
+<! DOCTYPE html>
+<html>
+<head>
+<title> Dog Dog Cam </title>
+</ head>
 <body>
-<html lang="en"><head><meta charset="utf-8">
-  <title>SCB Developers</title><base href="/">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="styles.48b19e96dc32561ceb61.bundle.css" rel="stylesheet"/>
-  </head><body><app-root></app-root><script type="text/javascript" src="inline.318b50c57b4eba3d437b.bundle.js">
-  </script><script type="text/javascript" src="polyfills.ffa4fda141254db0a163.bundle.js">
-  </script><script type="text/javascript" src="main.a0fccda653e0fc728a5c.bundle.js">
-  </script>
-  </body>
-</html>
+<php?
+$ orig = file_get_contents ("http://10.0.0.49/cgi-bin/snapshot.cgi");
+$ im = imagecreatefromstring ($ orig);
+$ now = date ("U");
+$ newfile = "/tmp/$now.jpg";
+file_put_contents ($ newfile, $ orig);
+$ newnew = imagecreatetruecolor (960,540);
+imagecopyresized ($ newnew, $ im, 0, 0, 0, 0, 0, 960, 540, 1920, 1080);
+$ newnewfile = "/var/www/tires/dogdog/images/$now-r.jpg";
+imagejpeg ($ newnew ใหม่ $ newnewfile);
+imagedestroy ($ im);
+imagedestroy ($ newnew);
+echo "<img src = \" images / $ now-r.jpg \ ">";
+?>
+</ body>
+</ html>
